@@ -1,5 +1,5 @@
 class ValidationJS {
-    constructor(config) {
+    constructor(config = {}) {
         this.config = config;
         this.forms = this._buildValidator();
     }
@@ -10,7 +10,7 @@ class ValidationJS {
      * @return {Array} of Forms, including inputs
      */
     _buildValidator() {
-        let formElements = document.querySelectorAll(this.config.validationSelector || '.validate');
+        let formElements = document.querySelectorAll(this.config.validationSelector || '.validation');
         let forms = [];
 
         for (let elem of formElements) {
