@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validator Demo</title>
+    <link href="demo.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+  <form class="validation" data-vgroup="text-grp" method="post" novalidate>
+    <input type="text" pattern="(123)" required placeholder="123" />
+    <input type="text" pattern="abc|^$" placeholder="abc or empty" />
+    <input type="text" pattern="(❤)" placeholder="❤ (U+2764)" />
+
+    <input type="submit" text="Submit form" value="Submit form" />
+
+    <!-- Manually validate form by executing validate-method -->
+    <input type="button" text="validate()" value="validate()" onClick="validator.validate('text-grp')" />
+
+    <!-- isValid -->
+    <input type="button" text="isValid() -> console" value="isValid() -> console" onClick="console.log(validator.isValid('text-grp'))" />
+  </form>
+
+<script src="ValidationJS.js"></script>
+
+<script>
+var validatorConfig = {
+    validationSelector: '.validation',  // (default: .validation) Class to apply validator to
+    triggerOn: 'submit',                // (default: submit)      Event that should trigger validation
+    preventDefault: true,               // (default: false)       Disable common behaviour?
+    onValid: (form) => {                // (default: undefined)   Function to get executed after successfull validation
+        console.log(form);
+    },
+    onInvalid: (form) => {              // (default: undefined)   Function to get executed after failed validation
+        console.log(form);
+    }
+};
+
+var validator = new ValidationJS(validatorConfig);
+
+// Destroy Validator, but keep config
+// validator.destruct();
+
+// Restore Validator from config
+// validator.restore();
+
+// Manually validate inputs of vgroup
+//validator.validate('text-grp2');
+</script>
+</body>
+</html>
