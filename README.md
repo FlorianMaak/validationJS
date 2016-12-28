@@ -31,11 +31,11 @@ var validatorConfig = {
 ```
 
 ## Parameters
-*validationSelector*: (string) The validation-selector. (class, id, or any other selector)
-*triggerOn*: (string) The form-event that should trigger validation
-*preventDefault*: (boolean) Cancel events?
-*onValid*: (function) Function to get executed after successfull validation
-*onInvalid*: (function) Function to get executed after failed validation
+* **validationSelector**: (string) The validation-selector. (class, id, or any other selector)
+* **triggerOn**: (string) The form-event that should trigger validation
+* **preventDefault**: (boolean) Cancel events?
+* **onValid**: (function) Function to get executed after successfull validation
+* **onInvalid**: (function) Function to get executed after failed validation
 
 # Methods
 
